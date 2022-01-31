@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { NewNote, NewNoteFooter } from './AddNoteStyles';
 import { Context } from '../AppProvider';
 import { nanoid } from "nanoid";
+import NoteColor from '../NoteColor';
 
 const AddNote = () => {
 
@@ -14,6 +15,7 @@ const AddNote = () => {
             id: nanoid(),
             text: text,
             date: date.toLocaleDateString(),
+            color: ctx.color,
         };
         const newNotes = [...ctx.notes, newNote];
         ctx.setNotes(newNotes);
@@ -32,6 +34,7 @@ const AddNote = () => {
         if (noteText.trim().length > 0) {
             addNote(noteText);
             setNoteText("");
+            ctx.setColor("rgb(233,233,233)");
         }
     };
 
@@ -45,7 +48,7 @@ const AddNote = () => {
 
     return (
         <>
-            <NewNote>
+            <NewNote color={ctx.color}>
                 <textarea
                     onChange={handleOnChange}
                     value={noteText}
@@ -64,6 +67,7 @@ const AddNote = () => {
                     </button>
                 </NewNoteFooter>
             </NewNote>
+            <NoteColor />
         </>
     );
 };

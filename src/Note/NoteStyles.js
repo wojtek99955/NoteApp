@@ -9,24 +9,22 @@ export const DeleteIcon = styled(MdDeleteForever)`
 `
 
 export const NoteContainer = styled.div`
-      background-color: #fef68a;
-  border-radius: 10px;
-  padding: 1rem;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  white-space: pre-wrap;
+    background-color: ${({ color }) => color};
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: pre-wrap;
 
   &:hover ${DeleteIcon}{
     opacity:1;
   }
-
-
-  
   p{
       font-size: 1rem;
       align-self: flex-start;
+      word-break: break-all;
   }
 `
 

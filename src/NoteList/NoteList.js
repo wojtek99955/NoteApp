@@ -41,6 +41,7 @@ const NoteList = () => {
                         date={note.date}
                         handleDeleteNote={deleteNote}
                         key={note.id}
+                        color={note.color}
 
                     />
                 ))}

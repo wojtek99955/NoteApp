@@ -1,9 +1,9 @@
 import { NoteContainer, NoteFooter, DeleteIcon } from './NoteStyles'
 
-const Note = ({ id, text, date, handleDeleteNote }) => {
+const Note = ({ id, text, date, handleDeleteNote, color }) => {
 
     return (
-        <NoteContainer>
+        <NoteContainer color={color}>
             <p> {text} </p>
             <NoteFooter>
                 <small> {date} </small>

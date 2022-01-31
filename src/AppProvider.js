@@ -13,6 +13,7 @@ function AppProvider({ children }) {
     }, [notes]);
 
     const [searchText, setSearchText] = useState("");
+    const [color, setColor] = useState("#E9E9E9");
     const [darkMode, setDarkMode] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [showTextarea, setShowTextarea] = useState(false);
@@ -27,6 +28,8 @@ function AppProvider({ children }) {
             setShowSearch,
             showTextarea,
             setShowTextarea,
+            color,
+            setColor,
             darkMode,
             setDarkMode
         }}>
