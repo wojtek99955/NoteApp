@@ -15,7 +15,7 @@ const Header = () => {
     const handleToggleDarkMode = () => ctx.setDarkMode((prev) => !prev);
 
     return (
-        <HeaderContainer darkMode={ctx.darkMode}>
+        <HeaderContainer $dark={ctx.darkMode}>
             <h1>Notatki</h1>
             <BtnsContainer>
                 <ToggleContainer
@@ -28,9 +28,9 @@ const Header = () => {
                     )}
                 </ToggleContainer>
                 <SearchIconContainer onClick={handleShowSearch}>
-                    <SearchIcon darkMode={ctx.darkMode} />
+                    <SearchIcon $dark={ctx.darkMode} />
                 </SearchIconContainer>
-                <AddIcon onClick={handleShowTextarea} darkMode={ctx.darkMode} />
+                <AddIcon onClick={handleShowTextarea} $dark={ctx.darkMode} />
             </BtnsContainer>
         </HeaderContainer>
     );

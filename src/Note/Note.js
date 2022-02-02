@@ -1,6 +1,25 @@
-import { NoteContainer, NoteFooter, DeleteIcon } from './NoteStyles'
+import { NoteContainer, NoteFooter, DeleteIcon, DoneIcon } from './NoteStyles'
+import { useContext } from 'react';
+import { Context } from '../AppProvider';
 
-const Note = ({ id, text, date, handleDeleteNote, color }) => {
+const Note = ({ text, date, handleDeleteNote, color, id, done }) => {
+
+
+
+    const ctx = useContext(Context);
+
+    const handleDone = (id) => {
+        ctx.setNotes(ctx.notes.map((note) => {
+            if (note.id === id) {
+                return {
+                    ...note,
+                    done: !done,
+                }
+            } else {
+                return note
+            }
+        }))
+    }
 
     return (
         <NoteContainer color={color}>
@@ -10,6 +29,7 @@ const Note = ({ id, text, date, handleDeleteNote, color }) => {
                 <DeleteIcon
                     onClick={() => handleDeleteNote(id)}
                 />
+                <DoneIcon $done={done} onClick={() => handleDone(id)} />
             </NoteFooter>
         </NoteContainer>
     );

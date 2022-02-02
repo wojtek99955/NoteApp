@@ -42,7 +42,7 @@ const NoteList = () => {
                         handleDeleteNote={deleteNote}
                         key={note.id}
                         color={note.color}
-
+                        done={note.done}
                     />
                 ))}
             </NoteListWrapper>

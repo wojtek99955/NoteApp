@@ -16,10 +16,12 @@ const AddNote = () => {
             text: text,
             date: date.toLocaleDateString(),
             color: ctx.color,
+            done: false,
         };
         const newNotes = [...ctx.notes, newNote];
         ctx.setNotes(newNotes);
     };
+
 
     const [noteText, setNoteText] = useState([]);
     const characterMax = 200;

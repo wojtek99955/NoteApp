@@ -31,7 +31,7 @@ function AppProvider({ children }) {
             color,
             setColor,
             darkMode,
-            setDarkMode
+            setDarkMode,
         }}>
         {children}
     </Context.Provider>;

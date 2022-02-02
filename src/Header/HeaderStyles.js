@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div`
     margin-bottom: 1rem;
 
     h1{
-        color: ${({ darkMode }) => darkMode ? "white" : "black"};
+        color: ${({ $dark }) => $dark ? "white" : "black"};
     }
 `
 
@@ -45,11 +45,11 @@ export const SearchIconContainer = styled.div`
 
 export const SearchIcon = styled(MdSearch)`
     font-size: 1.2rem;
-    color: ${({ darkMode }) => darkMode ? "white" : "black"};
+    color: ${({ $dark }) => $dark ? "white" : "black"};
 `
 
 export const AddIcon = styled(PlusCircleFill)`
 width: 2rem;
-color: ${({ darkMode }) => darkMode ? "white" : "black"};
+color: ${({ $dark }) => $dark ? "white" : "black"};
 cursor: pointer;
 `
