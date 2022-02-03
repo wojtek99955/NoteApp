@@ -5,6 +5,7 @@ import { Container, Box, BtnsContainer, DownIcon, AllIcon, DoneIcon, ExIcon } fr
 function Sort() {
 
     const boxRef = useRef(null);
+
     const ctx = useContext(Context);
 
     const handleShowDone = () => {
@@ -23,8 +24,8 @@ function Sort() {
 
     const [showButtons, setShowButtons] = useState(false);
     const handleShowButtons = (e) => {
-        e.stopPropagation();
         setShowButtons(prev => !prev);
+        e.stopPropagation();
     };
 
     const handleClickOutside = (e) => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { TiThSmall } from 'react-icons/ti';
-import { MdDoneAll } from 'react-icons/md';
-import { ImCross } from 'react-icons/im';
+import { Notes } from '@styled-icons/material-sharp/Notes';
+import { Done } from '@styled-icons/material-outlined/Done';
+import { Cross } from '@styled-icons/entypo/Cross';
 import { FaSortDown } from 'react-icons/fa';
 
 export const Container = styled.div`
@@ -15,11 +15,19 @@ export const Container = styled.div`
         padding:0.5rem;
         width:100%;
         align-items: center;
-        gap:.2rem;
+        gap:.5rem;
         white-space: nowrap;
         
         &:not(:last-of-type){
             border-bottom:1px solid rgba(0, 0, 0, 0.3);
+        }
+        &:first-child{
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        &:last-child{
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
         }
 
         &:hover{
@@ -67,17 +75,17 @@ export const DownIcon = styled(FaSortDown)`
     z-index:3;
 `
 
-export const AllIcon = styled(TiThSmall)`
-    font-size: .9rem;
+export const AllIcon = styled(Notes)`
+    width: .9rem;
     color:black;
 `
 
-export const DoneIcon = styled(MdDoneAll)`
-    font-size: .9rem;
+export const DoneIcon = styled(Done)`
+    width:1rem;
     color:black;
 `
 
-export const ExIcon = styled(ImCross)`
-    font-size: 0.8rem;
+export const ExIcon = styled(Cross)`
+    width: 1rem;
     color:black;
 `

@@ -14,7 +14,6 @@ const NoteList = () => {
             note.text.toLowerCase().includes(ctx.searchText));
     });
 
-
     const [view, setView] = useState(false);
     const handleView = () => {
         setView(!view);
