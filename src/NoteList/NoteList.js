@@ -1,14 +1,15 @@
 import Note from "../Note/Note";
 import React, { useState, useContext } from "react";
-import { Wrapper, ViewWrapper, NoteListWrapper, StyledGridIcon, StyledRowsIcon } from './NoteListStyles';
+import { Wrapper, ViewWrapper, NoteListWrapper, StyledGridIcon, StyledRowsIcon, SortContainer } from './NoteListStyles';
 import { Context } from '../AppProvider';
+import Sort from '../Sort/Sort';
 
 
 const NoteList = () => {
 
     const ctx = useContext(Context);
 
-    const notes = ctx.notes.filter((note) => {
+    const notes = ctx.filtered.filter((note) => {
         return (
             note.text.toLowerCase().includes(ctx.searchText));
     });
@@ -26,13 +27,16 @@ const NoteList = () => {
 
     return (
         <Wrapper>
-            {
-                notes.length > 1 && (
-                    <ViewWrapper onClick={handleView}>
-                        {view ? <StyledGridIcon darkMode={ctx.darkMode} /> : <StyledRowsIcon darkMode={ctx.darkMode} />}
-                    </ViewWrapper>
-                )
-            }
+            <SortContainer>
+                <Sort />
+                {
+                    notes.length > 1 && (
+                        <ViewWrapper onClick={handleView}>
+                            {view ? <StyledGridIcon darkMode={ctx.darkMode} /> : <StyledRowsIcon darkMode={ctx.darkMode} />}
+                        </ViewWrapper>
+                    )
+                }
+            </SortContainer>
             <NoteListWrapper view={view}>
                 {notes.map((note) => (
                     <Note

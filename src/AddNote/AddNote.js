@@ -22,7 +22,6 @@ const AddNote = () => {
         ctx.setNotes(newNotes);
     };
 
-
     const [noteText, setNoteText] = useState([]);
     const characterMax = 200;
 
