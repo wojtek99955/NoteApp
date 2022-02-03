@@ -33,10 +33,22 @@ export const Box = styled.div`
     display: inline-block;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+    position:absolute;
+    animation: ${({ showButtons }) => showButtons ? "showHide 400ms" : null};
+    animation-fill-mode: forwards;
     top:10px;
     background: rgba(255,255,255,0.8);
 
-
+    @keyframes showHide{
+        0%{
+            top:15px;
+            opacity: 0;
+        }
+        100%{
+            top:40px;
+            opacity:1;
+        }
+    }
 `
 export const BtnsContainer = styled.div`
     display: flex;
@@ -51,6 +63,8 @@ export const DownIcon = styled(FaSortDown)`
     display: block;
     cursor: pointer;
     margin-bottom: .5rem;
+    position: relative;
+    z-index:3;
 `
 
 export const AllIcon = styled(TiThSmall)`

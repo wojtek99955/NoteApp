@@ -18,11 +18,10 @@ function AppProvider({ children }) {
     const [showSearch, setShowSearch] = useState(false);
     const [showTextarea, setShowTextarea] = useState(false);
     const [filtered, setFiltered] = useState([]);
+
     useEffect(() => {
         setFiltered([...notes])
     }, [notes]);
-
-    console.log(filtered);
 
     return <Context.Provider
         value={{

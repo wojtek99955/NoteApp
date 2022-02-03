@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Context } from '../AppProvider';
 import { Container, Box, BtnsContainer, DownIcon, AllIcon, DoneIcon, ExIcon } from './SortStyles';
 
 function Sort() {
 
+    const boxRef = useRef(null);
     const ctx = useContext(Context);
 
     const handleShowDone = () => {
@@ -21,13 +22,30 @@ function Sort() {
     }
 
     const [showButtons, setShowButtons] = useState(false);
-    const handleShowButtons = () => setShowButtons(!showButtons);
+    const handleShowButtons = (e) => {
+        e.stopPropagation();
+        setShowButtons(prev => !prev);
+    };
+
+    const handleClickOutside = (e) => {
+        if (boxRef.current && !boxRef.current.contains(e.target)) {
+            setShowButtons(false);
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [showButtons]);
 
     return (
         <Container>
             <DownIcon onClick={handleShowButtons} />
             {showButtons ? (
-                <Box showButtons={showButtons}>
+                <Box ref={boxRef} showButtons={showButtons}>
                     <BtnsContainer>
                         <button onClick={showAll} ><AllIcon /> Wszystkie</button>
                         <button onClick={handleShowDone} ><DoneIcon />Zrobione</button>
