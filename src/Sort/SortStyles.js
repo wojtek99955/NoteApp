@@ -67,7 +67,7 @@ export const BtnsContainer = styled.div`
 
 export const DownIcon = styled(FaSortDown)`
     font-size: 2rem;
-    color:black;
+    color:${({ dark }) => dark ? "white" : "black"};
     display: block;
     cursor: pointer;
     margin-bottom: .5rem;

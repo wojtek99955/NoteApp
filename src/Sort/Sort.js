@@ -44,7 +44,7 @@ function Sort() {
 
     return (
         <Container>
-            <DownIcon onClick={handleShowButtons} />
+            <DownIcon onClick={handleShowButtons} dark={ctx.darkMode} />
             {showButtons ? (
                 <Box ref={boxRef} showButtons={showButtons}>
                     <BtnsContainer>
