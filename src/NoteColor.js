@@ -23,9 +23,9 @@ function NoteColor() {
         <Container>
 
             <Color onClick={() => ctx.setColor("#BAFFB4")} style={{ backgroundColor: "#BAFFB4" }} />
-            <Color onClick={() => ctx.setColor("gold")} style={{ backgroundColor: "gold" }} />
-            <Color onClick={() => ctx.setColor("orange")} style={{ backgroundColor: "orange" }} />
-            <Color onClick={() => ctx.setColor("yellow")} style={{ backgroundColor: "yellow" }} />
+            <Color onClick={() => ctx.setColor("#FFFDA2")} style={{ backgroundColor: "#FFFDA2" }} />
+            <Color onClick={() => ctx.setColor("#FFAB76")} style={{ backgroundColor: "#FFAB76" }} />
+            <Color onClick={() => ctx.setColor("#FF6363")} style={{ backgroundColor: "#FF6363" }} />
 
         </Container>
     )
