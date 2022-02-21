@@ -14,6 +14,7 @@ export const NewNote = styled.div`
       width: 100%;
       caret-color: black;
       outline: none;
+      font-size: 1rem;
   }
 `
 
