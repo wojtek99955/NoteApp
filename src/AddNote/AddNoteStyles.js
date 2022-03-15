@@ -35,3 +35,6 @@ export const NewNoteFooter = styled.div`
       cursor: pointer;
   }
 `
+export const Container = styled.div`
+    position: relative;
+`
