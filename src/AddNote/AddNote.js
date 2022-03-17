@@ -5,12 +5,14 @@ import { nanoid } from "nanoid";
 import NoteColor from '../NoteColor';
 import AddError from '../Notifications/AddError';
 import AddNotification from '../Notifications/AddNotification';
+import CharactersError from '../Notifications/CharactersError';
 
 const AddNote = () => {
 
     const ctx = useContext(Context);
     const [addError, setAddError] = useState(null);
     const [addNotification, setAddNotification] = useState(null);
+    const [charactersError, setCharactersError] = useState(null);
 
     const addNote = (text) => {
         const date = new Date();
@@ -32,6 +34,9 @@ const AddNote = () => {
         if (characterMax - e.target.value.length >= 0) {
             setNoteText(e.target.value);
             setAddNotification(false);
+            setCharactersError(false);
+        } else {
+            setCharactersError(true);
         }
     };
 
@@ -81,9 +86,27 @@ const AddNote = () => {
                 </NewNoteFooter>
             </NewNote>
             <NoteColor />
-            {addError ? <AddError addError={addError} setAddError={setAddError} /> : null}
+            {addError ?
+                <AddError
+                    addError={addError}
+                    setAddError={setAddError}
+                />
+                : null
+            }
             {addNotification ?
-                <AddNotification addNotification={addNotification} setAddNotification={setAddNotification} /> : null}
+                <AddNotification
+                    addNotification={addNotification}
+                    setAddNotification={setAddNotification}
+                />
+                : null
+            }
+            {charactersError ?
+                <CharactersError
+                    charactersError={charactersError}
+                    setCharactersError={setCharactersError}
+                />
+                : null
+            }
         </Container>
     );
 };

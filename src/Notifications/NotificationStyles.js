@@ -14,7 +14,7 @@ border-radius: 8px;
 position:absolute;
 right:-5%;
 top: 10%;
-animation: ${({ addError, addNotification }) => addError || addNotification ? "showNotification 600ms, hide 600ms" : null};
+animation: ${({ addError, addNotification, charactersError }) => addError || addNotification || charactersError ? "showNotification 600ms, hide 600ms" : null};
 animation-fill-mode: forwards;
 animation-delay: 0s, 4s;
 top:10px;
