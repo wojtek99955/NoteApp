@@ -5,10 +5,13 @@ import { MdOutlineDoneOutline } from 'react-icons/md';
 
 export const DeleteIcon = styled(MdDeleteForever)`
     cursor: pointer;
-    opacity: 0;
     transition: opacity 300ms ease;
     margin-left:auto;
     margin-right:1rem;
+
+    @media (min-width: 1024px){
+      opacity: 0;
+    }
 `
 
 export const NoteContainer = styled.div`
