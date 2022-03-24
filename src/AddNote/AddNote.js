@@ -40,16 +40,14 @@ const AddNote = () => {
         }
     };
 
-    const trimmedNoteText = noteText.toString().trim();
-
     const handleSave = () => {
-        if (trimmedNoteText.trim().length > 0) {
-            addNote(trimmedNoteText);
+        if (noteText.length > 0) {
+            addNote(noteText);
             setNoteText("");
             ctx.setColor("rgb(233,233,233)");
             setAddError(false);
             setAddNotification(true);
-        } else if (trimmedNoteText.length === 0) {
+        } else if (noteText.length === 0) {
             setAddError(true);
             setAddNotification(false);
         }
@@ -69,7 +67,7 @@ const AddNote = () => {
             <NewNote color={ctx.color}>
                 <textarea
                     onChange={handleOnChange}
-                    value={trimmedNoteText}
+                    value={noteText}
                     className="text"
                     rows="8"
                     cols="10"
@@ -78,7 +76,7 @@ const AddNote = () => {
                 ></textarea>
                 <NewNoteFooter>
                     <small>
-                        Pozostało {characterMax - trimmedNoteText.length} znaków
+                        Pozostało {characterMax - noteText.length} znaków
                     </small>
                     <button onClick={handleSave} onMouseUp={() => setAddError(false)}>
                         zapisz
