@@ -40,14 +40,16 @@ const AddNote = () => {
         }
     };
 
+    const trimmedNoteText = noteText.toString().trim();
+
     const handleSave = () => {
-        if (noteText.length > 0) {
+        if (trimmedNoteText.length > 0) {
             addNote(noteText);
             setNoteText("");
             ctx.setColor("rgb(233,233,233)");
             setAddError(false);
             setAddNotification(true);
-        } else if (noteText.length === 0) {
+        } else if (trimmedNoteText.length === 0) {
             setAddError(true);
             setAddNotification(false);
         }
