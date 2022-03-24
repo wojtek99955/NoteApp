@@ -7,7 +7,11 @@ export const Wrapper = styled.div`
 `
 
 export const ViewWrapper = styled.div`
-text-align: end;
+  display:none;
+  @media (min-width:726px){
+    display: block ;
+  }
+
 `
 
 export const NoteListWrapper = styled.div`
