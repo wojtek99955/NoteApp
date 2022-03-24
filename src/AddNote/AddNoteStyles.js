@@ -28,11 +28,13 @@ export const NewNoteFooter = styled.div`
   }
 
   button{
-      background-color: #e1e1e1;
+      background-color: #828282;
       border: none;
       border-radius: 15px;
-      padding: 5px 10px 5px 10px;
+      padding: 0.4rem 1rem;
       cursor: pointer;
+      font-weight:500;
+      color:white;
   }
 `
 export const Container = styled.div`
