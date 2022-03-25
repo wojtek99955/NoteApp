@@ -12,12 +12,15 @@ gap:1rem;
 padding: 0.4rem;
 border-radius: 8px;
 position:absolute;
-right:-5%;
+right:0;
 top: 10%;
 animation: ${({ addError, addNotification, charactersError }) => addError || addNotification || charactersError ? "showNotification 600ms, hide 600ms" : null};
 animation-fill-mode: forwards;
 animation-delay: 0s, 4s;
 top:10px;
+@media (min-width: 1150px){
+    right:-5%;
+}
 
     &:hover{
         animation-play-state: paused;
