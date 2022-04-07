@@ -29,6 +29,7 @@ Create and store your notes for a later purpose!
 - filter notes
 - change view
 - save notes in localstorage
+- notifications about error 
 
 ## Installation
 
