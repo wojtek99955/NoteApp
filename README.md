@@ -16,6 +16,7 @@ Create and store your notes for a later purpose!
 * react
 * styled-components
 * react context
+* localStorage
 
 
 ## Screenshots
@@ -29,6 +30,8 @@ Create and store your notes for a later purpose!
 - filter notes
 - change view
 - save notes in localstorage
+- notifications about error 
+- success notification
 
 ## Installation
 
