@@ -32,6 +32,7 @@ Create and store your notes for a later purpose!
 - save notes in localstorage
 - notifications about error 
 - success notification
+- show current number of notes
 
 ## Installation
 
