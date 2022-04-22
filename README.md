@@ -35,6 +35,7 @@ Create and store your notes for a later purpose!
 - show current number of notes
 - mark done note
 - delete note
+- search note
 
 ## Installation
 
