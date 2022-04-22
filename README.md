@@ -34,6 +34,7 @@ Create and store your notes for a later purpose!
 - success notification
 - show current number of notes
 - mark done note
+- delete note
 
 ## Installation
 
